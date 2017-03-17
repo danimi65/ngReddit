@@ -3,8 +3,8 @@
 import angular from 'angular';
 import { DefaultState, DefaultCtrl } from './default';
 import * as uiRouter from 'angular-ui-router';
-import { AwwState, AwwCtrl} from './aww';
-import { ProgState, ProgCtrl} from './programmerhumor';
+import { AwwState, AwwCtrl, AwwServiceName, AwwService } from './aww';
+import { ProgState, ProgCtrl, ProgServiceName, ProgService} from './programmerhumor';
 
 
 console.log('aww', AwwState);
@@ -41,6 +41,8 @@ angular.module(MODULE_NAME, ['ui.router'])
     $state.go('default');
   })
   .directive('app', app)
+  .service(AwwServiceName, AwwService)
+  .service(ProgServiceName, ProgService)
   .controller(DefaultState.controller, DefaultCtrl)
   .controller(AwwState.controller, AwwCtrl)
   .controller(ProgState.controller, ProgCtrl);

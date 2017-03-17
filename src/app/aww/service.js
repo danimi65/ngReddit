@@ -1,4 +1,4 @@
-export const AwwServiceName = 'aww';
+export const AwwServiceName = 'AwwService';
 export const AwwService = [
   '$http',
   class AwwService{

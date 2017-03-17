@@ -1,4 +1,4 @@
-export const ProgServiceName = 'aww';
+export const ProgServiceName = 'ProgService';
 export const ProgService = [
   '$http',
   class ProgService{
