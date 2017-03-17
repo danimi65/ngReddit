@@ -3,9 +3,13 @@
 import angular from 'angular';
 import { DefaultState, DefaultCtrl } from './default';
 import * as uiRouter from 'angular-ui-router';
+import { AwwState, AwwCtrl} from './aww';
+import { ProgState, ProgCtrl} from './programmerhumor';
 
 
+console.log('aww', AwwState);
 console.log(DefaultState);
+console.log('programmerhumor', ProgState);
 
 
 import '../style/app.css';
@@ -29,12 +33,16 @@ const MODULE_NAME = 'app';
 angular.module(MODULE_NAME, ['ui.router'])
   .config(($stateProvider) =>{
     $stateProvider
-      .state(DefaultState.name, DefaultState);
+      .state(DefaultState.name, DefaultState)
+      .state(AwwState.name, AwwState)
+      .state(ProgState.name, ProgState);
   })
   .run(($state) =>{
     $state.go('default');
   })
   .directive('app', app)
-  .controller(DefaultState.controller, DefaultCtrl);
+  .controller(DefaultState.controller, DefaultCtrl)
+  .controller(AwwState.controller, AwwCtrl)
+  .controller(ProgState.controller, ProgCtrl);
 
 export default MODULE_NAME;
