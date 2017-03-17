@@ -5,7 +5,7 @@ import { DefaultState, DefaultCtrl } from './default';
 import * as uiRouter from 'angular-ui-router';
 import { AwwState, AwwCtrl, AwwServiceName, AwwService } from './aww';
 import { ProgState, ProgCtrl, ProgServiceName, ProgService} from './programmerhumor';
-import {ThumbName} from './thumb';
+import {ThumbName, Thumb} from './thumb';
 
 
 console.log('aww', AwwState);
@@ -42,7 +42,7 @@ angular.module(MODULE_NAME, ['ui.router'])
     $state.go('default');
   })
   .directive('app', app)
-  .directive('thumb', ThumbName)
+  .directive(ThumbName, Thumb)
   .service(AwwServiceName, AwwService)
   .service(ProgServiceName, ProgService)
   .controller(DefaultState.controller, DefaultCtrl)
